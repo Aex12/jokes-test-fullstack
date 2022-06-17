@@ -23,14 +23,19 @@ First we need to install Podman / Docker if we don't already have any of them in
 After we've installed Podman or Docker, we need to run this commands on the project folder:
 
 `podman build -t jokes-app .`
+
 `podman run -dp 5000:5000 -t jokes-app`
 
 This will serve the app on http://localhost:5000
 ### How can I stop the app from running?
 After we're done testing the app, we need to run:
+
 `podman ps`
+
 Then, we take note of the CONTAINER_ID value of the container running the jokes-app image. After that, we stop the container by running:
+
 `podman stop CONTAINER_ID`
+
 (We replace CONTAINER_ID here with the previous value we've taken from `podman ps`.
 
 ## How can I run it without Podman or Docker?
