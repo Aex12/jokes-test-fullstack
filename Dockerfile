@@ -12,7 +12,7 @@ RUN npm run build
 FROM node:lts-slim AS backend-deps
 WORKDIR /app/backend
 COPY ./backend/package*.json ./
-RUN npm install
+RUN npm install --only=prod
 
 FROM node:lts-slim AS runner
 WORKDIR /app/backend

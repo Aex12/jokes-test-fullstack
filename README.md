@@ -47,7 +47,7 @@ cd frontend
 npm install
 npm build
 cd ../backend
-npm install
+npm install --only=prod
 npm start
 ```
 Note that we will need to have NodeJS along with NPM installed in our system for these commands to work.
