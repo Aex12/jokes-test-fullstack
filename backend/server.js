@@ -37,15 +37,11 @@ fastify.setErrorHandler(function (error, _request, reply) {
   reply.status(500).send(replyObj)
 })
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
 
-// Run the server
-const start = async () => {
-  try {
-    await fastify.listen(parseInt(PORT, 10))
-  } catch (err) {
-    fastify.log.error(err)
+fastify.listen({ port, host: '0.0.0.0' })
+  .then((address) => console.log(`server listening on ${address}`))
+  .catch((err) => {
+    console.error('Error starting server:', err)
     process.exit(1)
-  }
-}
-start()
+  })
