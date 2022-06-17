@@ -1,0 +1,23 @@
+{
+  "name": "jokes-backend",
+  "version": "0.0.1",
+  "description": "A backend for the Jokes official API",
+  "main": "server.js",
+  "dependencies": {
+    "@fastify/cors": "^8.0.0",
+    "@fastify/static": "^6.4.0",
+    "better-sqlite3": "^7.5.3",
+    "fastify": "^4.0.3",
+    "knex": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "knex migrate:latest; NODE_ENV=production node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Alejandro Caston Molero",
+  "license": "UNLICENSED"
+}

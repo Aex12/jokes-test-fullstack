@@ -1,8 +1,8 @@
 
 export default class ApiClient {
   constructor () {
-    this.BASE_URL = process.env.NODE_ENV === 'production'
-      ? 'http://localhost:5000' // we should change this line to the production server when live
+    this.BASE_URL = import.meta.env.PROD
+      ? window.location.origin
       : 'http://localhost:5000'
   }
 
@@ -17,8 +17,8 @@ export default class ApiClient {
     return res
   }
 
-  async getJokes () {
-    const res = await this.fetch('/jokes')
+  async getAllJokes () {
+    const res = await this.fetch('/allJokes')
     return res.jokes
   }
 
