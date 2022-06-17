@@ -22,6 +22,6 @@ COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 COPY ./backend /app/backend
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nodejs && \
-    chown nodejs:nodejs /app/backend
+    chown -R nodejs:nodejs /app/backend
 USER nodejs:nodejs
 CMD ["npm", "start"]
