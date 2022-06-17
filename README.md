@@ -26,6 +26,8 @@ After we've installed Podman or Docker, we need to run this commands on the proj
 
 `podman run -dp 5000:5000 -t jokes-app`
 
+(Remember that we can replace "podman" here with "docker" if we want to use Docker as our container backend)
+
 This will serve the app on http://localhost:5000
 ### How can I stop the app from running?
 After we're done testing the app, we need to run:
